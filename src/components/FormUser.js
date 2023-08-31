@@ -1,8 +1,9 @@
 import Button from "./Button";
-import { useState } from "react";
+import React, { useState } from "react";
 import "./FormUser.css";
 import Card from "./Card";
 import ErrorModel from "./ErrorModel";
+import Wrapper from "./Wrapper";
 
 const FormUser = (props) => {
   const [enterdUsername, setUsername] = useState("");
@@ -40,7 +41,7 @@ const FormUser = (props) => {
     setError(null);
   };
   return (
-    <div>
+    <React.Fragment>
       {error && (
         <ErrorModel
           title={error.title}
@@ -67,7 +68,7 @@ const FormUser = (props) => {
           <Button type="submit">Add User</Button>
         </form>
       </Card>
-    </div>
+    </React.Fragment>
   );
 };
 
